@@ -169,7 +169,30 @@ class TransactionSeeder extends Seeder
             ],
         ];
 
+        $seccond_transactions = [
+            [
+                'type' => 'expense',
+                'amount' => 50000,
+                'date' => '2024-01-15',
+                'category' => 'Makanan',
+                'note' => 'Lunch with friends',
+                'user_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'type' => 'income',
+                'amount' => 5000000,
+                'date' => '2024-01-16',
+                'category' => 'Gaji',
+                'note' => 'Monthly salary',
+                'user_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+
         // Insert the data into the 'transactions' table
-        DB::table('transactions')->insert($transactions);
+        DB::table('transactions')->insert($seccond_transactions);
     }
 }
