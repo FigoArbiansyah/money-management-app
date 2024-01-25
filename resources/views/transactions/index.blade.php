@@ -18,7 +18,7 @@
             @endif
             <div class="col-12">
                 <div class="row">
-                    <div class="col-6 mb-4">
+                    <div class="col-md-6 mb-4">
                         <div class="card">
                             <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-4">
+                    <div class="col-md-6 mb-4">
                         <div class="card">
                             <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
