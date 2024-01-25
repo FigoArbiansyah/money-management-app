@@ -1,12 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware('auth.check-login');
+Route::get('/', [DashboardController::class, 'dashboard_view'])->middleware('auth.check-login');
 
 Route::get('/info-saldo', function () {
     return view('info-saldo');

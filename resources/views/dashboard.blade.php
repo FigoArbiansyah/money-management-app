@@ -1,5 +1,21 @@
 @extends('layouts.main')
 
+@php
+    $symbol = '+';
+    $color = 'success';
+    $icon = 'bx-up-arrow-alt';
+
+    if ($lastTransaction->type == 'expense') {
+        $symbol = '-';
+        $color = 'danger';
+        $icon = 'bx-down-arrow-alt';
+    }
+
+    function generateNumberFormat($amount) {
+        return 'Rp ' . number_format($amount, 2, ',', '.');
+    }
+@endphp
+
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row justify-content-center">
@@ -83,8 +99,8 @@
                                 </div>
                                 <span>Saldo</span>
                                 <h3 class="card-title text-nowrap mb-1">
-                                    {{ 'Rp ' . number_format(auth()->user()->saldo, 2, ',', '.') }}</h3>
-                                <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +0%</small>
+                                    {{ generateNumberFormat($currentSaldo) }}</h3>
+                                <small class="text-{{ $color }} fw-semibold"><i class="bx {{ $icon }}"></i> {{ $symbol . generateNumberFormat($lastTransaction->amount) }}</small>
                             </div>
                         </div>
                     </div>
